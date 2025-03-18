@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+
+@layer utilities {
+    .bgtheme {
+        background-color: #1E293B;
+    }
+}
