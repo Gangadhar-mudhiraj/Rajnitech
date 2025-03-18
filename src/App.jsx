@@ -8,9 +8,11 @@ import ContactUs from './components/Contactus';
 import Services from './components/Services';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
+import Navbar from './components/Navbar';
 const App = () => {
   return (
-    <div className="app">
+    <div className="app bg-[#000428] z-[100] sticky top-0  z-[999]">
+      <Navbar />
       <header>
         <WateryDiv />
         <section id="banner" className='top-[-16]'>

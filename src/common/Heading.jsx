@@ -47,9 +47,9 @@ const Heading = ({ text = "Animated Heading" }) => {
             ref={textRef}
             initial={{ y: -100, opacity: 0 }}
             animate={controls}
-            className="text-3xl text-blue-100 font-bold text-center"
+            className="text-4xl text-indigo-400 font-bold text-center my-4"
         >
-            {text}
+            {text.toUpperCase()}
         </motion.div>
     );
 };

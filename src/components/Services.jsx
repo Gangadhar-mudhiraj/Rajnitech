@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { HiCode, HiCloud, HiPhone, HiMail } from 'react-icons/hi';
 import ServiceCard from './ServiceCard';
+import Heading from '../common/Heading';
 
 const services = [
     {
@@ -40,15 +41,7 @@ const Services = () => {
                 transition={{ duration: 0.7, ease: "easeInOut" }}
                 className="text-center mb-12"
             >
-                <motion.h2
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                    whileHover={{ scale: 1.05, color: "#818CF8" }}
-                    className="text-4xl font-extrabold text-indigo-400 mb-4"
-                >
-                    What We Offer
-                </motion.h2>
+                <Heading text='What We Offer' />
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}

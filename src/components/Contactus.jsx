@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { HiMail, HiPhone } from 'react-icons/hi';
+import Heading from '../common/Heading';
 
 const ContactUs = () => {
     return (
@@ -13,9 +14,8 @@ const ContactUs = () => {
         >
             <div className="max-w-3xl mx-auto">
                 {/* Title Section */}
-                <h2 className="text-4xl font-bold mb-4 text-center text-indigo-400">
-                    Contact Us
-                </h2>
+                <Heading text='Contact Us' />
+
                 <p className="text-lg text-gray-400 mb-12 text-center">
                     Get in touch with us for any queries or services
                 </p>

@@ -5,6 +5,7 @@ import img1 from "../assets/img1.png"
 import img2 from "../assets/img2.png"
 import img3 from "../assets/img3.png"
 import PortfolioCard from './PortfolioCard'
+import Heading from '../common/Heading'
 
 const Card = ({ text, icon: Icon }) => {
     return (
@@ -92,9 +93,7 @@ const Portfolio = () => {
         <div className="bg-gray-900 min-h-screen py-16 px-4 sm:px-6 lg:px-8 text-white">
             {/* Header */}
             <div className="text-center mb-12">
-                <h1 className="text-3xl font-extrabold text-indigo-400 mb-4 uppercase tracking-wide">
-                    Our Work
-                </h1>
+                <Heading text='Our Work' />
                 <h2 className="text-4xl font-bold mb-4">
                     Featured Projects
                 </h2>

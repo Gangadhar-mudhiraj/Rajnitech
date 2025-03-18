@@ -5,6 +5,7 @@ import {
     FaLaptopCode, FaMobileAlt, FaCloud, FaRobot,
     FaCertificate, FaStar, FaGoogle
 } from 'react-icons/fa';
+import Heading from '../common/Heading';
 
 const Header = () => {
     return (
@@ -65,7 +66,7 @@ const Header = () => {
                     <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
-                        className="mt-6 px-6 py-3 bg-white text-blue-600 font-bold rounded-full shadow-lg hover:bg-gray-100 transition duration-300"
+                        className="mt-6 px-6 py-3 bg-indigo-800 text-white font-bold rounded-full shadow-lg hover:bg-indigo-500 transition duration-100"
                     >
                         Get Started
                     </motion.button>
@@ -105,19 +106,12 @@ const Header = () => {
             <div className="bg-gray-900 text-white py-16 px-4 -mt-68 z-10">
                 {/* Buttons */}
                 <div className="flex justify-center gap-6 mb-12 pt-48">
-                    <ActionButton label="Start Your Project" bgColor="bg-blue-500" hoverColor="hover:bg-blue-600" />
+                    <ActionButton label="Start Your Project" bgColor="bg-indigo-500" hoverColor="hover:bg-blue-600" />
                     <ActionButton label="View Portfolio" bgColor="bg-gray-700" hoverColor="hover:bg-gray-600" />
                 </div>
 
                 {/* Expertise Title */}
-                <motion.h1
-                    className="text-4xl font-extrabold uppercase tracking-wide text-center mb-12"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                >
-                    Our Expertise
-                </motion.h1>
+                <Heading text='Our Expertise' />
 
                 {/* Expertise Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">

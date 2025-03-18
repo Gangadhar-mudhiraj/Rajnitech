@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { HiOutlineCheckCircle, HiUserGroup, HiGlobe, HiHeart } from 'react-icons/hi';
 import AboutCard from './AboutCard';
 import aboutimg from "../assets/aboutimg.png";
+import Heading from '../common/Heading';
 
 const DetailsCard = ({ text }) => {
     return (
@@ -58,9 +59,8 @@ const About = () => {
                 transition={{ duration: 0.6, ease: "easeInOut" }}
                 className="text-center mb-12"
             >
-                <h2 className="text-3xl font-extrabold text-indigo-400 mb-4">
-                    Who We Are
-                </h2>
+                <Heading text=' Who We Are' />
+
                 <p className="text-xl font-semibold text-gray-300">
                     Learn more about our mission and values
                 </p>

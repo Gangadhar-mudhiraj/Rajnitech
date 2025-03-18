@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-
+import Heading from '../common/Heading';
 const ClientReviews = () => {
   const reviews = [
     {
@@ -68,9 +68,8 @@ const ClientReviews = () => {
   return (
     <div className="bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-white mb-12 text-center tracking-wide">
-          What Our Clients Say
-        </h2>
+        <Heading text="What Our Clients Say" />
+
         <div className="relative overflow-hidden h-72">
           <AnimatePresence custom={direction} initial={false}>
             <motion.div

@@ -1,8 +1,63 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import FooterItem from '../common/FooterItem';
+import { useAnimation } from 'framer-motion';
 import DetailsCard from '../common/DetailsCards';
-import Heading from '../common/Heading';
+import { motion } from 'framer-motion';
 import { FaFacebook, FaInstagram, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+
+
+const Heading = ({ text = "Animated Heading" }) => {
+    const controls = useAnimation();
+    const textRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting);
+            },
+            { threshold: 0.1 } // Adjust threshold as needed
+        );
+
+        if (textRef.current) {
+            observer.observe(textRef.current);
+        }
+
+        return () => {
+            if (textRef.current) {
+                observer.unobserve(textRef.current);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (isVisible) {
+            controls.start({
+                y: 0,
+                opacity: 1,
+                transition: {
+                    type: "spring",
+                    stiffness: 100, // Reduced stiffness for a smoother spring
+                    damping: 10, // Increased damping for less bounce
+                    duration: 2, // increased duration to make it slower
+                },
+            });
+        } else {
+            controls.start({ y: -100, opacity: 0 });
+        }
+    }, [isVisible, controls]);
+
+    return (
+        <motion.div
+            ref={textRef}
+            initial={{ y: -100, opacity: 0 }}
+            animate={controls}
+            className="text-4xl text-white font-bold text-center my-4"
+        >
+            {text.toUpperCase()}
+        </motion.div>
+    );
+};
 
 const Footer = () => {
     const data = [
@@ -17,10 +72,10 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="text-gray-300 py-12 px-6 md:px-16" style={{ zIndex: 9999, position: 'relative' }}>
+        <footer className="text-gray-300 px-6 md:px-16 bottom-0" style={{ zIndex: 9999, position: 'relative' }}>
 
             {/* 🔹 Top Section */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap">
 
                 {/* 🔹 Description Section */}
                 <div className="space-y-4">
@@ -72,7 +127,7 @@ const Footer = () => {
             </div>
 
             {/* 🔹 Bottom Section */}
-            <div className="flex flex-col md:flex-row justify-between items-center text-white text-sm mt-12 border-t border-gray-700 pt-4 ">
+            <div className="flex flex-col md:flex-row justify-between items-center text-white text-sm mt-12 border-t border-gray-700 py-4 ">
                 <p className='text-lg'>&copy; 2025 Rajni Tech Foundation. All rights reserved.</p>
                 <div className="flex flex-wrap justify-center gap-4 mt-2 md:mt-0 text-lg">
                     <p className="hover:text-white cursor-pointer">Privacy Policy</p>

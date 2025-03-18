@@ -38,10 +38,10 @@ const WateryDiv = ({ width = "100%", height = "300px" }) => {
     }, []);
 
     return (
-        <div ref={containerRef} style={{ width, height }} className="relative bg-gradient-to-b from-[#000428] to-[#1572B6] z-0">
+        <div ref={containerRef} style={{ width, height }} className="relative bg-gradient-to-b from-[#000428] to-[#1572B6] z-0 -top-0">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-white text-2xl font-bold text-center p-2 rounded w-full h-12"></div>
 
-            <Navbar />
+            {/* <Navbar /> */}
 
             {size.width > 0 && size.height > 0 &&
                 Array.from({ length: 2 }).map((_, index) => (

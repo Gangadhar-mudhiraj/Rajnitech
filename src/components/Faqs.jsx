@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import Heading from '../common/Heading';
 
 const Faqs = () => {
     const faqsData = [
@@ -45,9 +46,7 @@ const Faqs = () => {
         <div className="bg-gradient-to-b from-gray-900 to-black min-h-screen py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
                 {/* Heading */}
-                <h2 className="text-4xl font-bold text-white mb-8 text-center tracking-wide">
-                    Frequently Asked Questions
-                </h2>
+                <Heading text=' Frequently Asked Questions' />
                 <div className="space-y-4">
                     {faqsData.map((faq, index) => (
                         <motion.div
